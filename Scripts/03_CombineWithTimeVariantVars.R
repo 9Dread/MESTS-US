@@ -3,11 +3,14 @@ library(readxl)
 library(sf)
 library(tidycensus)
 library(tigris)
+library(educationdata)
 
-options(tigris_use_cache = TRUE)
+# options(tigris_use_cache = TRUE) <- allows you to download queried shapefiles for faster re-use if desired
 load("Data/Cleaned_Scores/cleaned_scores_all_years.Rdata")
 source("Functions/create_point_geography.R")
 source("Functions/spatial_joins.R")
+source("Functions/MEPSandEDFacts.R")
+source("Functions/IPR.R")
 
 #Convert SAT scores and schools to geometric points
 #Point locations from urban institute, sourced from the CCD 2022.
@@ -51,7 +54,8 @@ for(state in states) {
 }
 puma_geo <- select(puma_geo, PUMACE10, geometry) |> 
   st_as_sf() |> 
-  rename(puma = PUMACE10)
+  rename(puma = PUMACE10) |> 
+  distinct()
 df <- st_join(df, puma_geo)
 
 #We need to separate Tract_GEOID into 2010 and 2020 tracts.
@@ -67,3 +71,8 @@ df <- rbind(df1, df2)
 rm(df1, df2)
 save(df, file="Data/tmp.Rdata")
 
+#df1 <- mepsAndEDFacts()
+#save(df1, file="Data/MEPSandEDFacts.Rdata")
+
+#IPR <- IPR()
+#save(IPR, file="Data/IPR/IPR.Rdata")
