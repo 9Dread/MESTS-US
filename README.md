@@ -23,8 +23,10 @@ There are a number of improvements we plan to make both on the model and on visu
 * Aggregate points to polygons for more clear visualization (too much point overlap in the current version), and conduct analyses on the polygon level
 * Develop model visualizations and communicate variable importance values
 * Train another model on variables that change over time for time series visualization
+* Conduct model validation experiments on other data sources
 * Release a paper on our findings
 * Release a supplementary visualization map application
+* Conduct case studies i.e. analyze specific regions/cities of interest, corroborating with other research on regions/cities
 
 ## Reproducibility
 
