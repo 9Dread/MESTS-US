@@ -60,6 +60,8 @@ frame <- drop_na(df) |>
 ind <- createDataPartition(frame$SAT_Total, p = 0.9, list = FALSE)
 train <- frame[ind,]
 test <- frame[-ind,]
+write_csv(train, "Data/train_test/train.csv")
+write_csv(test, "Data/train_test/test.csv")
 ctrl <- trainControl(method = "cv", 
                      number = 10
 )
