@@ -16,7 +16,7 @@ This is an updating repository. We currently have a working model and have produ
 
 ![Spatial point plot of total, math, and reading scores across the US](https://github.com/9Dread/educationopportunity/blob/main/Figures/Points.PNG?raw=true)
 ![Plot of county-level average total, math, and erw scores across the US](https://github.com/9Dread/educationopportunity/blob/main/Figures/Counties.PNG?raw=true)
-![Plot of county-level average total scores across the US](https://github.com/9Dread/educationopportunity/blob/main/Figures/Counties_Total.PNG?raw=true)
+![Plot of county-level average total scores across the US](https://raw.githubusercontent.com/9Dread/educationopportunity/refs/heads/main/Figures/Counties_Total.PNG)
 
 We also have model performance metrics, SHAP variable importance beeswarm plots, and prediction-value-change variable importance metrics for the Total, Math, and ERW models; see [Figures](https://github.com/9Dread/educationopportunity/blob/main/Figures).
 
