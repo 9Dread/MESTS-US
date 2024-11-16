@@ -62,6 +62,9 @@ ggsave(filename = "Points.PNG", path = "Figures")
 
 #Point interpolation:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53fefb2483d27462542d59e4f968e06b7fd80d50
 sf_use_s2(FALSE)
 grid <- st_bbox(states) |> 
   st_as_stars(dx = 15000) |> 
@@ -72,6 +75,7 @@ ggplot() + geom_stars(data = i,
                       aes(fill = var1.pred, x = x, y = y)) + 
   xlab(NULL) + ylab(NULL) +
   geom_sf(data = st_cast(states, "MULTILINESTRING"))
+<<<<<<< HEAD
 =======
 #sf_use_s2(FALSE)
 #grid <- st_bbox(states) |> 
@@ -84,6 +88,8 @@ ggplot() + geom_stars(data = i,
 #  xlab(NULL) + ylab(NULL) +
 #  geom_sf(data = st_cast(states, "MULTILINESTRING"))
 >>>>>>> 65c1373 (Optuna, new figures, metric and SHAP plots)
+=======
+>>>>>>> 53fefb2483d27462542d59e4f968e06b7fd80d50
 
 varimp_total <- read_csv("ModelOutputs/total_feat_imp.csv")
 varimp_math <- read_csv("ModelOutputs/math_feat_imp.csv")
