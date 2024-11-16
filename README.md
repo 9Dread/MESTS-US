@@ -1,4 +1,4 @@
-![VarImps](https://github.com/user-attachments/assets/3f918545-d976-43fe-9f9b-a8b4a179669d)# MESTS-US: A Dataset of Model-Estimated Standardized Test Scores Across the US
+# MESTS-US: A Dataset of Model-Estimated Standardized Test Scores Across the US
 
 This project is an updating prototype of an ML model-estimation of the spatial distribution of high school standardized test score performance. We gather and combine average score performance (SAT and ACT) at the high-school level for 10 states in total. ACT scores are converted to SAT scores as per common practice in other work. We also gather test counts and participation rates, as these are known nuisance parameters, but they have yet to be implemented in this analysis. They are also missing in some states; we impute them if that is the case. We use spatial and tabular methods to join schools in our training set to our predictive variables.
 
@@ -18,19 +18,7 @@ This is an updating repository. We currently have a working model and have produ
 ![Plot of county-level average total, math, and erw scores across the US](https://github.com/9Dread/educationopportunity/blob/main/Figures/Counties.PNG?raw=true)
 ![Plot of county-level average total scores across the US](https://github.com/9Dread/educationopportunity/blob/main/Figures/Counties_Total.PNG?raw=true)
 
-We also have model performance metrics and prediction-value-change variable importance metrics for the Total, Math, and ERW models:
-
-![RMSE and R2 for the Total model](https://github.com/9Dread/educationopportunity/blob/main/Figures/metrics_total.PNG?raw=true)
-![RMSE and R2 for the Math model](https://github.com/9Dread/educationopportunity/blob/main/Figures/metrics_math.PNG?raw=true)
-![RMSE and R2 for the ERW model](https://github.com/9Dread/educationopportunity/blob/main/Figures/metrics_erw.PNG?raw=true)
-![Prediction value change variable importance for the Total model](https://github.com/9Dread/educationopportunity/blob/main/Figures/varimp_total.PNG?raw=true)
-![Prediction value change variable importance for the Math model](https://github.com/9Dread/educationopportunity/blob/main/Figures/varimp_math.PNG?raw=true)
-![Prediction value change variable importance for the ERW model](https://github.com/9Dread/educationopportunity/blob/main/Figures/varimp_erw.PNG?raw=true)
-
-Finally, we have SHAP beeswarm plots on the test set for each model:
-![Shapley value beeswarm plot for the Total model](https://github.com/9Dread/educationopportunity/blob/main/Figures/beeswarm_total.PNG?raw=true)
-![Shapley value beeswarm plot for the Math model](https://github.com/9Dread/educationopportunity/blob/main/Figures/beeswarm_math.PNG?raw=true)
-![Shapley value beeswarm plot for the ERW model](https://github.com/9Dread/educationopportunity/blob/main/Figures/beeswarm_erw.PNG?raw=true)
+We also have model performance metrics, SHAP variable importance beeswarm plots, and prediction-value-change variable importance metrics for the Total, Math, and ERW models; see [Figures](https://github.com/9Dread/educationopportunity/blob/main/Figures).
 
 ## Coming Soon
 
