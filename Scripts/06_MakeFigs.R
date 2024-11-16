@@ -12,7 +12,9 @@ scHS <- read_csv("Data/final_postprediction_frames/total_postpred.csv") |>
 geo_loc <- read_csv("Data/ccd_point_geom.csv") |> 
   mutate(across(everything(), as.numeric))
 scHS <- inner_join(scHS, geo_loc, by="NCES_ID") |> 
-  drop_na(longitude, latitude) |> 
+  drop_na(longitude, latitude) 
+write_csv(scHS |> select(NCES_ID, zip, puma, tract2010, longitude, latitude, SAT_Total, SAT_Math, SAT_ERW), "FinalDataset/sat_hs")
+scHS <- scHS |> 
   st_as_sf(coords = c("longitude", "latitude"),
            crs = 4269)
 rm(geo_loc)
@@ -61,35 +63,11 @@ plot <- p1 + p2 + p3 + guide_area() +
 ggsave(filename = "Points.PNG", path = "Figures")
 
 #Point interpolation:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 53fefb2483d27462542d59e4f968e06b7fd80d50
-sf_use_s2(FALSE)
-grid <- st_bbox(states) |> 
-  st_as_stars(dx = 15000) |> 
-  st_crop(states)
-i <- idw(SAT_Total~1, scHS, grid)
-
-ggplot() + geom_stars(data = i, 
-                      aes(fill = var1.pred, x = x, y = y)) + 
-  xlab(NULL) + ylab(NULL) +
-  geom_sf(data = st_cast(states, "MULTILINESTRING"))
-<<<<<<< HEAD
-=======
 #sf_use_s2(FALSE)
 #grid <- st_bbox(states) |> 
 #  st_as_stars(dx = 15000) |> 
 #  st_crop(states)
 #i <- idw(SAT_Total~1, scHS, grid)
-
-#ggplot() + geom_stars(data = i, 
-#                      aes(fill = var1.pred, x = x, y = y)) + 
-#  xlab(NULL) + ylab(NULL) +
-#  geom_sf(data = st_cast(states, "MULTILINESTRING"))
->>>>>>> 65c1373 (Optuna, new figures, metric and SHAP plots)
-=======
->>>>>>> 53fefb2483d27462542d59e4f968e06b7fd80d50
 
 varimp_total <- read_csv("ModelOutputs/total_feat_imp.csv")
 varimp_math <- read_csv("ModelOutputs/math_feat_imp.csv")
@@ -235,6 +213,6 @@ ggplot() +
   geom_sf(data=shift_geometry(counties_data), mapping=aes(fill = avg_total), color = NA) +
   geom_sf(data=shift_geometry(states |> filter(STUSPS == "AK" | STUSPS == "HI")), fill= NA, color = "black") +
   scale_fill_viridis(option = "A") +
-  labs(title = "Predicted Average School-Level SAT Scores by County", fill = "SAT_Total") +
+  labs(title = "Predicted Average School-Level SAT Scores by County", fill = "SAT Total") +
   theme(legend.direction = "vertical", legend.title.position = "top")
 ggsave(filename = "Counties_Total.PNG", path = "Figures")
