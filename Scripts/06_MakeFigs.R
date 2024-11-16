@@ -235,7 +235,6 @@ ggplot() +
   geom_sf(data=shift_geometry(counties_data), mapping=aes(fill = avg_total), color = NA) +
   geom_sf(data=shift_geometry(states |> filter(STUSPS == "AK" | STUSPS == "HI")), fill= NA, color = "black") +
   scale_fill_viridis(option = "A") +
-  theme_minimal() +
   labs(title = "Predicted Average School-Level SAT Scores by County", fill = "SAT_Total") +
   theme(legend.direction = "vertical", legend.title.position = "top")
 ggsave(filename = "Counties_Total.PNG", path = "Figures")
