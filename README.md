@@ -12,7 +12,7 @@ Our predictors come from the GEOWEALTH-US project of [Suss et al.](https://www.n
 
 To contribute to this, we estimate average performance at high schools across the country. There is plenty of literature that has found a clear relationship between socioeconomic status and academic performance, and we find work that is related to ours in [Stanford's education opportunity project](https://edopportunity.org/). However, to our knowledge our dataset of standardized test scores for high schools across the US is the first of its kind, and it has significant use potential given standardized test scores' relevance in college admissions.
 
-We hope that, given our model estimates of schools' average performance, we can have more publically-available information about how well a typical student performs at schools, and that this information can drive further educational research. In the future, with more sophisticated methodology, individual students may even be compared to their expected performance, contributing to more equitable college admissions across the country. 
+We hope that, given our model estimates of schools' average performance, we can have more publically-available information about how well a typical student performs at schools, and that this information can drive further educational research.
 
 ## Status
 
